@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name         = "MSSidebarController"
-	s.version      = "1.0.0"
+	s.version      = "1.0.1"
 	s.summary      = "Fully customizable sidebar controller"
 	s.homepage     = "https://github.com/mindsnacks/MSSidebarController"
 
