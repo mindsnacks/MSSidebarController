@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
 	s.source       = { :git => "https://github.com/mindsnacks/MSSidebarController.git", :tag => s.version.to_s }
 	s.platform     = :ios, '7.0'
-	s.source_files = 'MSSidebarController/Classes/*.{h,m}'
+	s.source_files = 'MSSidebarController/Classes/**/*.{h,m}'
 	s.public_header_files = 'MSSidebarController/Classes/Public/*.h'
 	s.requires_arc = true
 	s.ios.frameworks = 'UIKit', 'QuartzCore'
