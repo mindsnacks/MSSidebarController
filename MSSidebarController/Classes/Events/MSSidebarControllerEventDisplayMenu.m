@@ -13,7 +13,7 @@
 
 @interface MSSidebarControllerEventDisplayMenu ()
 
-@property (nonatomic) id<MSSidebarDisplayMenuAnimator> animator;
+@property (nonatomic) id<MSSidebarControllerAnimatorFactory> animatorFactory;
 
 @end
 
@@ -22,15 +22,15 @@
 + (instancetype)eventWithSidebarController:(MSSidebarController *)sidebarController
                        viewControllerState:(TKState *)vcState
                        displayingMenuState:(TKState *)displayingMenuState
-                                  animator:(id<MSSidebarDisplayMenuAnimator>)animator {
+                           animatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory {
     NSParameterAssert(vcState);
     NSParameterAssert(displayingMenuState);
-    NSParameterAssert(animator);
+    NSParameterAssert(animatorFactory);
     
     MSSidebarControllerEventDisplayMenu *event = [self eventWithSidebarController:sidebarController
                                                           transitioningFromStates:@[vcState]
                                                                           toState:displayingMenuState];
-    event.animator = animator;
+    event.animatorFactory = animatorFactory;
     
     return event;
 }
@@ -52,12 +52,13 @@
     
     currentViewController.view.userInteractionEnabled = NO;
     
-    [self.animator sidebarController:sidebarController
-           willDismissViewController:currentViewController
-                      andDisplayMenu:menuViewController
-                     completionBlock:^{
-                         [sidebarController fireEvent:MSSidebarControllerEventMenuDisplayed.eventName];
-                     }];
+    [[self.animatorFactory createDisplayMenuAnimatorForSidebarController:sidebarController] sidebarController:sidebarController
+                                                                                    willDismissViewController:currentViewController
+                                                                                               andDisplayMenu:menuViewController
+                                                                                              completionBlock:^
+     {
+         [sidebarController fireEvent:MSSidebarControllerEventMenuDisplayed.eventName];
+     }];
 }
 
 @end

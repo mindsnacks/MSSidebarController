@@ -15,7 +15,7 @@
 
 @interface MSSidebarControllerEventDisplayViewController ()
 
-@property (nonatomic) id<MSSidebarDisplayViewControllerAnimator> animator;
+@property (nonatomic) id<MSSidebarControllerAnimatorFactory> animatorFactory;
 
 @end
 
@@ -25,17 +25,17 @@
                                  menuState:(TKState *)menuState
                  hidingViewControllerState:(TKState *)hidingViewControllerState
              displayingViewControllerState:(TKState *)displayingViewControllerState
-                                  animator:(id<MSSidebarDisplayViewControllerAnimator>)animator {
+                           animatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory {
     NSParameterAssert(menuState);
     NSParameterAssert(hidingViewControllerState);
     NSParameterAssert(displayingViewControllerState);
-    NSParameterAssert(animator);
+    NSParameterAssert(animatorFactory);
     
     MSSidebarControllerEventDisplayViewController *event = [self eventWithSidebarController:sidebarController
                                                                     transitioningFromStates:@[menuState, hidingViewControllerState]
                                                                                     toState:displayingViewControllerState];
     
-    event.animator = animator;
+    event.animatorFactory = animatorFactory;
     
     return event;
 }
@@ -53,13 +53,14 @@
     
     [sidebarController.menuViewController willMoveToParentViewController:nil];
     
-    [self.animator sidebarController:sidebarController
-           willDisplayViewController:vc
-                     completionBlock:^{
-                         [sidebarController fireEvent:MSSidebarControllerEventViewControllerDisplayed.eventName
-                                   withViewController:vc
-                                  viewControllerIsNew:transition.viewControllerIsNew];
-                     }];
+    [[self.animatorFactory createDisplayViewControllerAnimatorForSidebarController:sidebarController] sidebarController:sidebarController
+                                                                                              willDisplayViewController:vc
+                                                                                                        completionBlock:^
+     {
+         [sidebarController fireEvent:MSSidebarControllerEventViewControllerDisplayed.eventName
+                   withViewController:vc
+                  viewControllerIsNew:transition.viewControllerIsNew];
+     }];
 }
 
 @end

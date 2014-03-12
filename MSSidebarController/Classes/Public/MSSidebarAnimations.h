@@ -33,3 +33,11 @@ willDismissViewController:(UIViewController *)currentViewController
           completionBlock:(void (^)(void))completionBlock;
 
 @end
+
+@protocol MSSidebarControllerAnimatorFactory <NSObject>
+
+- (id<MSSidebarDisplayViewControllerAnimator>)createDisplayViewControllerAnimatorForSidebarController:(MSSidebarController *)sidebarController;
+- (id<MSSidebarDisplayMenuAnimator>)createDisplayMenuAnimatorForSidebarController:(MSSidebarController *)sidebarController;
+- (id<MSSidebarHideViewControllerAnimator>)createHideViewControllerAnimatorForSidebarController:(MSSidebarController *)sidebarController;
+
+@end
