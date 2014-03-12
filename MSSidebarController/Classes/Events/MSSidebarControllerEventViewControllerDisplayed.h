@@ -11,7 +11,7 @@
 @interface MSSidebarControllerEventViewControllerDisplayed : MSSidebarControllerEvent
 
 + (instancetype)eventWithSidebarController:(MSSidebarController *)sidebarController
-             displayingViewControllerState:(TKEvent *)displayingVCState
-                       viewControllerState:(TKEvent *)vcState;
+             displayingViewControllerState:(TKState *)displayingVCState
+                       viewControllerState:(TKState *)vcState;
 
 @end
