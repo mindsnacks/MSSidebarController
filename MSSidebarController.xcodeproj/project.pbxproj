@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21D9A6A7523146CC8891F5D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18785CD697834C85B10D7001 /* libPods.a */; };
+		579E36A218CFC6AC00A3CE47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A118CFC6AC00A3CE47 /* Foundation.framework */; };
+		579E36A418CFC6AC00A3CE47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A318CFC6AC00A3CE47 /* CoreGraphics.framework */; };
+		579E36A618CFC6AC00A3CE47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A518CFC6AC00A3CE47 /* UIKit.framework */; };
+		579E36AC18CFC6AC00A3CE47 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 579E36AA18CFC6AC00A3CE47 /* InfoPlist.strings */; };
+		579E36AE18CFC6AC00A3CE47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579E36AD18CFC6AC00A3CE47 /* main.m */; };
+		579E36B218CFC6AC00A3CE47 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579E36B118CFC6AC00A3CE47 /* MSAppDelegate.m */; };
+		579E36B418CFC6AC00A3CE47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579E36B318CFC6AC00A3CE47 /* Images.xcassets */; };
+		579E36BB18CFC6AC00A3CE47 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36BA18CFC6AC00A3CE47 /* XCTest.framework */; };
+		579E36BC18CFC6AC00A3CE47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A118CFC6AC00A3CE47 /* Foundation.framework */; };
+		579E36BD18CFC6AC00A3CE47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A518CFC6AC00A3CE47 /* UIKit.framework */; };
+		579E36C518CFC6AC00A3CE47 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 579E36C318CFC6AC00A3CE47 /* InfoPlist.strings */; };
+		579E36C718CFC6AC00A3CE47 /* MSSidebarControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 579E36C618CFC6AC00A3CE47 /* MSSidebarControllerTests.m */; };
+		579E36D318CFC83100A3CE47 /* MSSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579E36D218CFC83100A3CE47 /* MSSidebarController.m */; };
+		57B343DB18D0D3B600E16F1E /* MSSidebarControllerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343DA18D0D3B600E16F1E /* MSSidebarControllerEvent.m */; };
+		57B343E018D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343DF18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m */; };
+		57B343E818D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343E718D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m */; };
+		57B343EB18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343EA18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m */; };
+		57B343EE18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343ED18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m */; };
+		57B343F118D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343F018D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.m */; };
+		57B343F918D1051A00E16F1E /* UIViewController+MSSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343F818D1051A00E16F1E /* UIViewController+MSSidebarController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		579E36BE18CFC6AC00A3CE47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 579E369618CFC6AC00A3CE47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 579E369D18CFC6AC00A3CE47;
+			remoteInfo = MSSidebarController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		158231FB8E484217ACF954BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		18785CD697834C85B10D7001 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		579E369E18CFC6AC00A3CE47 /* MSSidebarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSidebarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		579E36A118CFC6AC00A3CE47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		579E36A318CFC6AC00A3CE47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		579E36A518CFC6AC00A3CE47 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		579E36A918CFC6AC00A3CE47 /* MSSidebarController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MSSidebarController-Info.plist"; sourceTree = "<group>"; };
+		579E36AB18CFC6AC00A3CE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		579E36AD18CFC6AC00A3CE47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		579E36AF18CFC6AC00A3CE47 /* MSSidebarController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MSSidebarController-Prefix.pch"; sourceTree = "<group>"; };
+		579E36B018CFC6AC00A3CE47 /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
+		579E36B118CFC6AC00A3CE47 /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
+		579E36B318CFC6AC00A3CE47 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		579E36B918CFC6AC00A3CE47 /* MSSidebarControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSSidebarControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		579E36BA18CFC6AC00A3CE47 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		579E36C218CFC6AC00A3CE47 /* MSSidebarControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MSSidebarControllerTests-Info.plist"; sourceTree = "<group>"; };
+		579E36C418CFC6AC00A3CE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		579E36C618CFC6AC00A3CE47 /* MSSidebarControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSidebarControllerTests.m; sourceTree = "<group>"; };
+		579E36D218CFC83100A3CE47 /* MSSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarController.m; path = Classes/MSSidebarController.m; sourceTree = "<group>"; };
+		57B343D918D0D3B600E16F1E /* MSSidebarControllerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEvent.h; path = Classes/MSSidebarControllerEvent.h; sourceTree = "<group>"; };
+		57B343DA18D0D3B600E16F1E /* MSSidebarControllerEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEvent.m; path = Classes/MSSidebarControllerEvent.m; sourceTree = "<group>"; };
+		57B343DC18D0D61100E16F1E /* MSSidebarControllerEvent+Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MSSidebarControllerEvent+Protected.h"; path = "Classes/MSSidebarControllerEvent+Protected.h"; sourceTree = "<group>"; };
+		57B343DE18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventDisplayViewController.h; path = Classes/Events/MSSidebarControllerEventDisplayViewController.h; sourceTree = "<group>"; };
+		57B343DF18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventDisplayViewController.m; path = Classes/Events/MSSidebarControllerEventDisplayViewController.m; sourceTree = "<group>"; };
+		57B343E518D0E08000E16F1E /* MSSidebarController+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MSSidebarController+Internal.h"; path = "Classes/MSSidebarController+Internal.h"; sourceTree = "<group>"; };
+		57B343E618D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventViewControllerDisplayed.h; path = Classes/Events/MSSidebarControllerEventViewControllerDisplayed.h; sourceTree = "<group>"; };
+		57B343E718D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventViewControllerDisplayed.m; path = Classes/Events/MSSidebarControllerEventViewControllerDisplayed.m; sourceTree = "<group>"; };
+		57B343E918D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventDisplayMenu.h; path = Classes/Events/MSSidebarControllerEventDisplayMenu.h; sourceTree = "<group>"; };
+		57B343EA18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventDisplayMenu.m; path = Classes/Events/MSSidebarControllerEventDisplayMenu.m; sourceTree = "<group>"; };
+		57B343EC18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventMenuDisplayed.h; path = Classes/Events/MSSidebarControllerEventMenuDisplayed.h; sourceTree = "<group>"; };
+		57B343ED18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventMenuDisplayed.m; path = Classes/Events/MSSidebarControllerEventMenuDisplayed.m; sourceTree = "<group>"; };
+		57B343EF18D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventHideViewController.h; path = Classes/Events/MSSidebarControllerEventHideViewController.h; sourceTree = "<group>"; };
+		57B343F018D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventHideViewController.m; path = Classes/Events/MSSidebarControllerEventHideViewController.m; sourceTree = "<group>"; };
+		57B343F518D1050C00E16F1E /* MSSidebarAnimations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSSidebarAnimations.h; path = Classes/Public/MSSidebarAnimations.h; sourceTree = "<group>"; };
+		57B343F618D1051300E16F1E /* MSSidebarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSSidebarController.h; path = Classes/Public/MSSidebarController.h; sourceTree = "<group>"; };
+		57B343F718D1051A00E16F1E /* UIViewController+MSSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MSSidebarController.h"; path = "Classes/Public/UIViewController+MSSidebarController.h"; sourceTree = "<group>"; };
+		57B343F818D1051A00E16F1E /* UIViewController+MSSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MSSidebarController.m"; path = "Classes/Public/UIViewController+MSSidebarController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		579E369B18CFC6AC00A3CE47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579E36A418CFC6AC00A3CE47 /* CoreGraphics.framework in Frameworks */,
+				579E36A618CFC6AC00A3CE47 /* UIKit.framework in Frameworks */,
+				579E36A218CFC6AC00A3CE47 /* Foundation.framework in Frameworks */,
+				21D9A6A7523146CC8891F5D7 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		579E36B618CFC6AC00A3CE47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579E36BB18CFC6AC00A3CE47 /* XCTest.framework in Frameworks */,
+				579E36BD18CFC6AC00A3CE47 /* UIKit.framework in Frameworks */,
+				579E36BC18CFC6AC00A3CE47 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		579E369518CFC6AC00A3CE47 = {
+			isa = PBXGroup;
+			children = (
+				579E36A718CFC6AC00A3CE47 /* MSSidebarController */,
+				579E36C018CFC6AC00A3CE47 /* MSSidebarControllerTests */,
+				579E36A018CFC6AC00A3CE47 /* Frameworks */,
+				579E369F18CFC6AC00A3CE47 /* Products */,
+				158231FB8E484217ACF954BB /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		579E369F18CFC6AC00A3CE47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				579E369E18CFC6AC00A3CE47 /* MSSidebarController.app */,
+				579E36B918CFC6AC00A3CE47 /* MSSidebarControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		579E36A018CFC6AC00A3CE47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				579E36A118CFC6AC00A3CE47 /* Foundation.framework */,
+				579E36A318CFC6AC00A3CE47 /* CoreGraphics.framework */,
+				579E36A518CFC6AC00A3CE47 /* UIKit.framework */,
+				579E36BA18CFC6AC00A3CE47 /* XCTest.framework */,
+				18785CD697834C85B10D7001 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		579E36A718CFC6AC00A3CE47 /* MSSidebarController */ = {
+			isa = PBXGroup;
+			children = (
+				579E36D018CFC81C00A3CE47 /* Classes */,
+				579E36B018CFC6AC00A3CE47 /* MSAppDelegate.h */,
+				579E36B118CFC6AC00A3CE47 /* MSAppDelegate.m */,
+				579E36B318CFC6AC00A3CE47 /* Images.xcassets */,
+				579E36A818CFC6AC00A3CE47 /* Supporting Files */,
+			);
+			path = MSSidebarController;
+			sourceTree = "<group>";
+		};
+		579E36A818CFC6AC00A3CE47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				579E36A918CFC6AC00A3CE47 /* MSSidebarController-Info.plist */,
+				579E36AA18CFC6AC00A3CE47 /* InfoPlist.strings */,
+				579E36AD18CFC6AC00A3CE47 /* main.m */,
+				579E36AF18CFC6AC00A3CE47 /* MSSidebarController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		579E36C018CFC6AC00A3CE47 /* MSSidebarControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				579E36C618CFC6AC00A3CE47 /* MSSidebarControllerTests.m */,
+				579E36C118CFC6AC00A3CE47 /* Supporting Files */,
+			);
+			path = MSSidebarControllerTests;
+			sourceTree = "<group>";
+		};
+		579E36C118CFC6AC00A3CE47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				579E36C218CFC6AC00A3CE47 /* MSSidebarControllerTests-Info.plist */,
+				579E36C318CFC6AC00A3CE47 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		579E36D018CFC81C00A3CE47 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				57B343DD18D0D68600E16F1E /* Events */,
+				57B343F618D1051300E16F1E /* MSSidebarController.h */,
+				57B343E518D0E08000E16F1E /* MSSidebarController+Internal.h */,
+				579E36D218CFC83100A3CE47 /* MSSidebarController.m */,
+				57B343F718D1051A00E16F1E /* UIViewController+MSSidebarController.h */,
+				57B343F818D1051A00E16F1E /* UIViewController+MSSidebarController.m */,
+				57B343D918D0D3B600E16F1E /* MSSidebarControllerEvent.h */,
+				57B343DC18D0D61100E16F1E /* MSSidebarControllerEvent+Protected.h */,
+				57B343DA18D0D3B600E16F1E /* MSSidebarControllerEvent.m */,
+				57B343F518D1050C00E16F1E /* MSSidebarAnimations.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		57B343DD18D0D68600E16F1E /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				57B343DE18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.h */,
+				57B343DF18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m */,
+				57B343E618D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.h */,
+				57B343E718D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m */,
+				57B343E918D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.h */,
+				57B343EA18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m */,
+				57B343EC18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.h */,
+				57B343ED18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m */,
+				57B343EF18D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.h */,
+				57B343F018D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.m */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		579E369D18CFC6AC00A3CE47 /* MSSidebarController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 579E36CA18CFC6AC00A3CE47 /* Build configuration list for PBXNativeTarget "MSSidebarController" */;
+			buildPhases = (
+				6E5A99FD91BD406B933160E3 /* Check Pods Manifest.lock */,
+				579E369A18CFC6AC00A3CE47 /* Sources */,
+				579E369B18CFC6AC00A3CE47 /* Frameworks */,
+				579E369C18CFC6AC00A3CE47 /* Resources */,
+				2A8F7C4F17E3478F9AEB2C63 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSSidebarController;
+			productName = MSSidebarController;
+			productReference = 579E369E18CFC6AC00A3CE47 /* MSSidebarController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		579E36B818CFC6AC00A3CE47 /* MSSidebarControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 579E36CD18CFC6AC00A3CE47 /* Build configuration list for PBXNativeTarget "MSSidebarControllerTests" */;
+			buildPhases = (
+				579E36B518CFC6AC00A3CE47 /* Sources */,
+				579E36B618CFC6AC00A3CE47 /* Frameworks */,
+				579E36B718CFC6AC00A3CE47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				579E36BF18CFC6AC00A3CE47 /* PBXTargetDependency */,
+			);
+			name = MSSidebarControllerTests;
+			productName = MSSidebarControllerTests;
+			productReference = 579E36B918CFC6AC00A3CE47 /* MSSidebarControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		579E369618CFC6AC00A3CE47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = MindSnacks;
+				TargetAttributes = {
+					579E36B818CFC6AC00A3CE47 = {
+						TestTargetID = 579E369D18CFC6AC00A3CE47;
+					};
+				};
+			};
+			buildConfigurationList = 579E369918CFC6AC00A3CE47 /* Build configuration list for PBXProject "MSSidebarController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 579E369518CFC6AC00A3CE47;
+			productRefGroup = 579E369F18CFC6AC00A3CE47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				579E369D18CFC6AC00A3CE47 /* MSSidebarController */,
+				579E36B818CFC6AC00A3CE47 /* MSSidebarControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		579E369C18CFC6AC00A3CE47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579E36AC18CFC6AC00A3CE47 /* InfoPlist.strings in Resources */,
+				579E36B418CFC6AC00A3CE47 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		579E36B718CFC6AC00A3CE47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579E36C518CFC6AC00A3CE47 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A8F7C4F17E3478F9AEB2C63 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E5A99FD91BD406B933160E3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		579E369A18CFC6AC00A3CE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57B343DB18D0D3B600E16F1E /* MSSidebarControllerEvent.m in Sources */,
+				57B343E018D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m in Sources */,
+				57B343EB18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m in Sources */,
+				579E36B218CFC6AC00A3CE47 /* MSAppDelegate.m in Sources */,
+				57B343EE18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m in Sources */,
+				57B343E818D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m in Sources */,
+				57B343F918D1051A00E16F1E /* UIViewController+MSSidebarController.m in Sources */,
+				579E36AE18CFC6AC00A3CE47 /* main.m in Sources */,
+				579E36D318CFC83100A3CE47 /* MSSidebarController.m in Sources */,
+				57B343F118D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		579E36B518CFC6AC00A3CE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579E36C718CFC6AC00A3CE47 /* MSSidebarControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		579E36BF18CFC6AC00A3CE47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 579E369D18CFC6AC00A3CE47 /* MSSidebarController */;
+			targetProxy = 579E36BE18CFC6AC00A3CE47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		579E36AA18CFC6AC00A3CE47 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				579E36AB18CFC6AC00A3CE47 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		579E36C318CFC6AC00A3CE47 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				579E36C418CFC6AC00A3CE47 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		579E36C818CFC6AC00A3CE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				WARNING_CFLAGS = (
+					"-Wextra",
+					"-Wall",
+				);
+			};
+			name = Debug;
+		};
+		579E36C918CFC6AC00A3CE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = (
+					"-Wextra",
+					"-Wall",
+				);
+			};
+			name = Release;
+		};
+		579E36CB18CFC6AC00A3CE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 158231FB8E484217ACF954BB /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSSidebarController/MSSidebarController-Prefix.pch";
+				INFOPLIST_FILE = "MSSidebarController/MSSidebarController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		579E36CC18CFC6AC00A3CE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 158231FB8E484217ACF954BB /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSSidebarController/MSSidebarController-Prefix.pch";
+				INFOPLIST_FILE = "MSSidebarController/MSSidebarController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		579E36CE18CFC6AC00A3CE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MSSidebarController.app/MSSidebarController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSSidebarController/MSSidebarController-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MSSidebarControllerTests/MSSidebarControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		579E36CF18CFC6AC00A3CE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MSSidebarController.app/MSSidebarController";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MSSidebarController/MSSidebarController-Prefix.pch";
+				INFOPLIST_FILE = "MSSidebarControllerTests/MSSidebarControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		579E369918CFC6AC00A3CE47 /* Build configuration list for PBXProject "MSSidebarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				579E36C818CFC6AC00A3CE47 /* Debug */,
+				579E36C918CFC6AC00A3CE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		579E36CA18CFC6AC00A3CE47 /* Build configuration list for PBXNativeTarget "MSSidebarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				579E36CB18CFC6AC00A3CE47 /* Debug */,
+				579E36CC18CFC6AC00A3CE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		579E36CD18CFC6AC00A3CE47 /* Build configuration list for PBXNativeTarget "MSSidebarControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				579E36CE18CFC6AC00A3CE47 /* Debug */,
+				579E36CF18CFC6AC00A3CE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 579E369618CFC6AC00A3CE47 /* Project object */;
+}
