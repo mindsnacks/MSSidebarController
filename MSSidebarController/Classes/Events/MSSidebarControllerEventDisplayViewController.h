@@ -14,6 +14,6 @@
                                  menuState:(TKState *)menuState
                  hidingViewControllerState:(TKState *)hidingViewControllerState
              displayingViewControllerState:(TKState *)displayingViewControllerState
-                                  animator:(id<MSSidebarDisplayViewControllerAnimator>)animator;
+                           animatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory;
 
 @end

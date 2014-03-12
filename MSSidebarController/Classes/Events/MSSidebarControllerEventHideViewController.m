@@ -13,7 +13,7 @@
 
 @interface MSSidebarControllerEventHideViewController ()
 
-@property (nonatomic) id<MSSidebarHideViewControllerAnimator> animator;
+@property (nonatomic) id<MSSidebarControllerAnimatorFactory> animatorFactory;
 
 @end
 
@@ -22,15 +22,15 @@
 + (instancetype)eventWithSidebarController:(MSSidebarController *)sidebarController
                                  menuState:(TKState *)menuState
                  hidingViewControllerState:(TKState *)hidingVCState
-                                  animator:(id<MSSidebarHideViewControllerAnimator>)animator {
+                           animatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory {
     NSParameterAssert(menuState);
     NSParameterAssert(hidingVCState);
-    NSParameterAssert(animator);
+    NSParameterAssert(animatorFactory);
     
     MSSidebarControllerEventHideViewController *event = [self eventWithSidebarController:sidebarController
                                                                  transitioningFromStates:@[menuState]
                                                                                  toState:hidingVCState];
-    event.animator = animator;
+    event.animatorFactory = animatorFactory;
     
     return event;
 }
@@ -51,10 +51,10 @@
     UIViewController *currentVC = sidebarController.currentViewController,
                      *newVC = transition.userInfoViewController;
     
-    [self.animator sidebarController:sidebarController
-              willHideViewController:currentVC
-             toShowNewViewController:newVC
-                     completionBlock:^
+    [[self.animatorFactory createHideViewControllerAnimatorForSidebarController:sidebarController] sidebarController:sidebarController
+                                                                                              willHideViewController:currentVC
+                                                                                             toShowNewViewController:newVC
+                                                                                                     completionBlock:^
      {
          [currentVC.view removeFromSuperview];
          [currentVC removeFromParentViewController];

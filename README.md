@@ -10,9 +10,7 @@ You must instantiate the [controller](MSSidebarController/Classes/Public/MSSideb
 ```objc
 [[MSSidebarController alloc] initWithMenuViewController:menuVC
                                    activeViewController:activeVC
-                          displayViewControllerAnimator:displayViewControllerAnimator
-                                    displayMenuAnimator:displayMenuAnimator
-                             hideViewControllerAnimator:hideViewControllerAnimator];
+                                        animatorFactory:animatorFactory];
 ```
 
 You must also implement all three animation protocols:

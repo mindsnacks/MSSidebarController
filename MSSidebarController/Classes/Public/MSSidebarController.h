@@ -15,9 +15,7 @@
  */
 - (instancetype)initWithMenuViewController:(UIViewController *)menuVC
                       activeViewController:(UIViewController *)activeVC
-             displayViewControllerAnimator:(id<MSSidebarDisplayViewControllerAnimator>)displayVCAnimator
-                       displayMenuAnimator:(id<MSSidebarDisplayMenuAnimator>)displayMenuAnimator
-                hideViewControllerAnimator:(id<MSSidebarHideViewControllerAnimator>)hideVCAnimator;
+                           animatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory;
 
 - (void)showMenu;
 - (void)restoreLastViewController;

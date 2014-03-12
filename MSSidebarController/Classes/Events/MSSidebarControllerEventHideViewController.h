@@ -13,6 +13,6 @@
 + (instancetype)eventWithSidebarController:(MSSidebarController *)sidebarController
                                  menuState:(TKState *)menuState
                  hidingViewControllerState:(TKState *)hidingVCState
-                                  animator:(id<MSSidebarHideViewControllerAnimator>)animator;
+                           animatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory;
 
 @end

@@ -44,27 +44,19 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
                bundle:(NSBundle *)nibBundleOrNil {
     return [self initWithMenuViewController:nil
                        activeViewController:nil
-              displayViewControllerAnimator:nil
-                        displayMenuAnimator:nil
-                 hideViewControllerAnimator:nil];
+                            animatorFactory:nil];
 }
 
 - (instancetype)initWithMenuViewController:(UIViewController *)menuVC
                       activeViewController:(UIViewController *)activeVC
-             displayViewControllerAnimator:(id<MSSidebarDisplayViewControllerAnimator>)displayVCAnimator
-                       displayMenuAnimator:(id<MSSidebarDisplayMenuAnimator>)displayMenuAnimator
-                hideViewControllerAnimator:(id<MSSidebarHideViewControllerAnimator>)hideVCAnimator {
+                           animatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory {
     NSParameterAssert(menuVC);
     NSParameterAssert(activeVC);
     
-    NSParameterAssert(displayVCAnimator);
-    NSParameterAssert(displayMenuAnimator);
-    NSParameterAssert(hideVCAnimator);
+    NSParameterAssert(animatorFactory);
     
     if ((self = [super initWithNibName:nil bundle:nil])) {
-        [self setUpStateMachineWithDisplayViewControllerAnimator:displayVCAnimator
-                                             displayMenuAnimator:displayMenuAnimator
-                                      hideViewControllerAnimator:hideVCAnimator];
+        [self setUpStateMachineWithAnimatorFactory:animatorFactory];
         
         _menu = menuVC;
         _current = activeVC;
@@ -76,9 +68,7 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
     return self;
 }
 
-- (void)setUpStateMachineWithDisplayViewControllerAnimator:(id<MSSidebarDisplayViewControllerAnimator>)displayVCAnimator
-                                       displayMenuAnimator:(id<MSSidebarDisplayMenuAnimator>)displayMenuAnimator
-                                hideViewControllerAnimator:(id<MSSidebarHideViewControllerAnimator>)hideVCAnimator {
+- (void)setUpStateMachineWithAnimatorFactory:(id<MSSidebarControllerAnimatorFactory>)animatorFactory {
     _stateMachine = TKStateMachine.new;
     
     TKState *menuState              = [TKState stateWithName:kStateMenu];
@@ -98,22 +88,21 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
                                                                                               menuState:menuState
                                                                               hidingViewControllerState:hidingVCState
                                                                           displayingViewControllerState:displayingVCState
-                                                                                               animator:displayVCAnimator];
+                                                                                        animatorFactory:animatorFactory];
     TKEvent *vcDisplayedEvent = [MSSidebarControllerEventViewControllerDisplayed eventWithSidebarController:self
                                                                               displayingViewControllerState:displayingVCState
                                                                                         viewControllerState:vcState];
     TKEvent *displayMenuEvent = [MSSidebarControllerEventDisplayMenu eventWithSidebarController:self
                                                                             viewControllerState:vcState
                                                                             displayingMenuState:displayingMenuState
-                                                                                       animator:displayMenuAnimator];
-    
+                                                                                animatorFactory:animatorFactory];
     TKEvent *menuDisplayedEvent = [MSSidebarControllerEventMenuDisplayed eventWithSidebarController:self
                                                                                 displayingMenuState:displayingMenuState
                                                                                           menuState:menuState];
     TKEvent *hideVCEvent = [MSSidebarControllerEventHideViewController eventWithSidebarController:self
                                                                                         menuState:menuState
                                                                         hidingViewControllerState:hidingVCState
-                                                                                         animator:hideVCAnimator];
+                                                                                  animatorFactory:animatorFactory];
     
     [_stateMachine addEvents:@[displayVCEvent,
                                vcDisplayedEvent,
