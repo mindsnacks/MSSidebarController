@@ -51,8 +51,6 @@
     UIViewController *currentVC = sidebarController.currentViewController,
                      *newVC = transition.userInfoViewController;
     
-    CALayer *layer = currentVC.view.layer;
-    
     [self.animator sidebarController:sidebarController
               willHideViewController:currentVC
              toShowNewViewController:newVC
