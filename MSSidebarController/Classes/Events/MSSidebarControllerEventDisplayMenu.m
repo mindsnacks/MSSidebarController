@@ -11,7 +11,9 @@
 
 #import "MSSidebarControllerEventMenuDisplayed.h"
 
-@interface MSSidebarControllerEventDisplayMenu ()
+@interface MSSidebarControllerEventDisplayMenu () {
+    id<MSSidebarDisplayMenuAnimator> _animator;
+}
 
 @property (nonatomic) id<MSSidebarControllerAnimatorFactory> animatorFactory;
 
@@ -52,11 +54,13 @@
     
     currentViewController.view.userInteractionEnabled = NO;
     
-    [[self.animatorFactory createDisplayMenuAnimatorForSidebarController:sidebarController] sidebarController:sidebarController
-                                                                                    willDismissViewController:currentViewController
-                                                                                               andDisplayMenu:menuViewController
-                                                                                              completionBlock:^
+    _animator = [self.animatorFactory createDisplayMenuAnimatorForSidebarController:sidebarController];
+    [_animator sidebarController:sidebarController
+       willDismissViewController:currentViewController
+                  andDisplayMenu:menuViewController
+                 completionBlock:^
      {
+         _animator = nil;
          [sidebarController fireEvent:MSSidebarControllerEventMenuDisplayed.eventName];
      }];
 }

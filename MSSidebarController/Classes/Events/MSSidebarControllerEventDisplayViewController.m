@@ -13,7 +13,9 @@
 
 #import "MSSidebarControllerEventViewControllerDisplayed.h"
 
-@interface MSSidebarControllerEventDisplayViewController ()
+@interface MSSidebarControllerEventDisplayViewController () {
+    id<MSSidebarDisplayViewControllerAnimator> _animator;
+}
 
 @property (nonatomic) id<MSSidebarControllerAnimatorFactory> animatorFactory;
 
@@ -53,10 +55,13 @@
     
     [sidebarController.menuViewController willMoveToParentViewController:nil];
     
-    [[self.animatorFactory createDisplayViewControllerAnimatorForSidebarController:sidebarController] sidebarController:sidebarController
-                                                                                              willDisplayViewController:vc
-                                                                                                        completionBlock:^
+    _animator = [self.animatorFactory createDisplayViewControllerAnimatorForSidebarController:sidebarController];
+    [_animator sidebarController:sidebarController
+       willDisplayViewController:vc
+                 completionBlock:^
      {
+         _animator = nil;
+         
          [sidebarController fireEvent:MSSidebarControllerEventViewControllerDisplayed.eventName
                    withViewController:vc
                   viewControllerIsNew:transition.viewControllerIsNew];

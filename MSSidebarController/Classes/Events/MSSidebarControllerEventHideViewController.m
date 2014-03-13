@@ -11,7 +11,9 @@
 
 #import "MSSidebarControllerEventDisplayViewController.h"
 
-@interface MSSidebarControllerEventHideViewController ()
+@interface MSSidebarControllerEventHideViewController () {
+    id<MSSidebarHideViewControllerAnimator> _animator;
+}
 
 @property (nonatomic) id<MSSidebarControllerAnimatorFactory> animatorFactory;
 
@@ -51,11 +53,14 @@
     UIViewController *currentVC = sidebarController.currentViewController,
                      *newVC = transition.userInfoViewController;
     
-    [[self.animatorFactory createHideViewControllerAnimatorForSidebarController:sidebarController] sidebarController:sidebarController
-                                                                                              willHideViewController:currentVC
-                                                                                             toShowNewViewController:newVC
-                                                                                                     completionBlock:^
+    _animator = [self.animatorFactory createHideViewControllerAnimatorForSidebarController:sidebarController];
+    [_animator sidebarController:sidebarController
+          willHideViewController:currentVC
+         toShowNewViewController:newVC
+                 completionBlock:^
      {
+         _animator = nil;
+         
          [currentVC.view removeFromSuperview];
          [currentVC removeFromParentViewController];
          
