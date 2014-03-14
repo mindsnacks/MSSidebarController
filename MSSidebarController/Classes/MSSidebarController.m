@@ -129,6 +129,10 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
     _menu.view.frame = self.view.bounds;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return ([_stateMachine.currentState.name isEqualToString:kStateMenu]) ? self.menuViewController.preferredStatusBarStyle : self.currentViewController.preferredStatusBarStyle;
+}
+
 #pragma mark - public
 
 - (UIViewController *)menuViewController {
