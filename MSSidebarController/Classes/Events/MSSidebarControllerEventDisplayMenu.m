@@ -52,8 +52,6 @@
     [sidebarController.view insertSubview:menuViewController.view
                                   atIndex:0];
     
-    currentViewController.view.userInteractionEnabled = NO;
-    
     _animator = [self.animatorFactory createDisplayMenuAnimatorForSidebarController:sidebarController];
     [_animator sidebarController:sidebarController
        willDismissViewController:currentViewController

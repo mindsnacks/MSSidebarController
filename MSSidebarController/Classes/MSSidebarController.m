@@ -29,7 +29,14 @@ static NSString * const kStateDisplayingVC      = @"displaying_vc";
 static NSString * const kStateHidingVC          = @"hiding_vc";
 static NSString * const kStateDisplayingMenu    = @"displaying_menu";
 
-@interface MSSidebarController () {
+@interface MSSidebarFilterView : UIView
+
+@property (nonatomic, weak) MSSidebarController *sidebarController;
+
+@end
+
+@interface MSSidebarController () <UIGestureRecognizerDelegate>
+{
     UIViewController *_menu;
     UIViewController *_current;
     
@@ -113,10 +120,17 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
     [_stateMachine activate];
 }
 
+- (TKStateMachine *)stateMachine {
+    return _stateMachine;
+}
+
 #pragma mark -
 
 - (void)loadView {
-    [super loadView];
+    MSSidebarFilterView *view = [[MSSidebarFilterView alloc] initWithFrame:UIScreen.mainScreen.applicationFrame];
+    view.sidebarController = self;
+    
+    self.view = view;
     
     [self addChildViewController:_current];
     [self.view addSubview:_current.view];
@@ -165,7 +179,6 @@ viewControllerIsNew:NO];
     }
 }
 
-
 #pragma mark - internal
 
 - (BOOL)fireEvent:(id)eventOrEventName {
@@ -193,6 +206,8 @@ viewControllerIsNew:(BOOL)vcIsNew {
                               error:nil];
 }
 
+#pragma mark -
+
 - (void)setCurrentViewController:(UIViewController *)viewController {
     NSParameterAssert(viewController);
     
@@ -209,6 +224,28 @@ viewControllerIsNew:(BOOL)vcIsNew {
 
 - (BOOL)viewControllerIsNew {
     return [self.userInfo[kMSSidebarControllerEventViewControllerIsNewKey] boolValue];
+}
+
+@end
+
+@implementation MSSidebarFilterView
+
+- (BOOL)pointInside:(CGPoint)point
+          withEvent:(UIEvent *)event {
+    MSSidebarController *sidebarController = self.sidebarController;
+    
+    const BOOL menuIsBeingDisplayed = ([sidebarController.stateMachine.currentState.name isEqualToString:kStateMenu]);
+    const BOOL touchIsInCurrentController = CGRectContainsPoint(self.sidebarController.currentViewController.view.frame,
+                                                                point);
+    
+    const BOOL shouldIgnoreTouch = (menuIsBeingDisplayed &&
+                                    touchIsInCurrentController);
+    
+    if (shouldIgnoreTouch) {
+        [sidebarController restoreLastViewController];
+    }
+    
+    return !shouldIgnoreTouch;
 }
 
 @end
