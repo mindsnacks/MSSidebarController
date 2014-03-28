@@ -35,7 +35,7 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
 
 @end
 
-@interface MSSidebarController () <UIGestureRecognizerDelegate>
+@interface MSSidebarController ()
 {
     UIViewController *_menu;
     UIViewController *_current;
