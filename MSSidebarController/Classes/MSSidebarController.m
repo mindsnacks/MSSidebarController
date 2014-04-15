@@ -131,6 +131,8 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
     view.sidebarController = self;
     
     self.view = view;
+
+    _current.view.frame = self.view.bounds;
     
     [self addChildViewController:_current];
     [self.view addSubview:_current.view];
