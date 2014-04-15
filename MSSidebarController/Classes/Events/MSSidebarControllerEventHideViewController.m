@@ -52,6 +52,8 @@
                  sidebarController:(MSSidebarController *)sidebarController {
     UIViewController *currentVC = sidebarController.currentViewController,
                      *newVC = transition.userInfoViewController;
+
+        newVC.view.frame = sidebarController.view.bounds;
     
     _animator = [self.animatorFactory createHideViewControllerAnimatorForSidebarController:sidebarController];
     [_animator sidebarController:sidebarController
