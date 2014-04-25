@@ -43,8 +43,8 @@
 
 #pragma mark -
 
-- (void)eventWillFireWithTransition:(TKTransition *)transition
-                  sidebarController:(MSSidebarController *)sidebarController {
+- (void)eventDidFireWithTransition:(TKTransition *)transition
+                 sidebarController:(MSSidebarController *)sidebarController {
     UIViewController *menuViewController = sidebarController.menuViewController,
                      *currentViewController = sidebarController.currentViewController;
     

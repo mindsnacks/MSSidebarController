@@ -53,6 +53,7 @@
     UIViewController *vc = transition.userInfoViewController;
     vc.sidebarController = sidebarController;
     
+    sidebarController.currentViewController = vc;
     [sidebarController.menuViewController willMoveToParentViewController:nil];
     
     _animator = [self.animatorFactory createDisplayViewControllerAnimatorForSidebarController:sidebarController];

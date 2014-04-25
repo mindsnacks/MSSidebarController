@@ -45,9 +45,6 @@
     }
     
     vc.view.userInteractionEnabled = YES;
-    sidebarController.currentViewController = vc;
-    
-    [sidebarController setNeedsStatusBarAppearanceUpdate];
 }
 
 @end
