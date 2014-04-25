@@ -9,6 +9,7 @@
 #import "MSSidebarController.h"
 
 #import "MSSidebarController+Internal.h"
+#import "MSSidebarController+Animations.h"
 #import "UIViewController+MSSidebarController.h"
 
 #import <TransitionKit/TransitionKit.h>
@@ -41,6 +42,9 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
     UIViewController *_current;
     
     TKStateMachine *_stateMachine;
+    
+    UIStatusBarStyle _currentStatusBarStyle;
+    BOOL _currentStyleDependsOnCurrentVC;
 }
 
 @end
@@ -70,6 +74,8 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
         
         menuVC.sidebarController = self;
         activeVC.sidebarController = self;
+        
+        _currentStyleDependsOnCurrentVC = YES;
     }
     
     return self;
@@ -146,7 +152,7 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return ([_stateMachine.currentState.name isEqualToString:kStateMenu]) ? self.menuViewController.preferredStatusBarStyle : self.currentViewController.preferredStatusBarStyle;
+    return (_currentStyleDependsOnCurrentVC) ? self.currentViewController.preferredStatusBarStyle : _currentStatusBarStyle;
 }
 
 #pragma mark - public
@@ -214,6 +220,19 @@ viewControllerIsNew:(BOOL)vcIsNew {
     NSParameterAssert(viewController);
     
     _current = viewController;
+}
+
+- (void)setCurrentStatusBarStyle:(UIStatusBarStyle)style {
+    _currentStatusBarStyle = style;
+    _currentStyleDependsOnCurrentVC = NO;
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)setCurrentStatusBarStyleWithCurrentViewController {
+    _currentStyleDependsOnCurrentVC = YES;
+    
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 @end

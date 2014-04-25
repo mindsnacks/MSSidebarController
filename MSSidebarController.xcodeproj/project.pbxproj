@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		158231FB8E484217ACF954BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		18785CD697834C85B10D7001 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		572A98DA190A06AB00AD1C8E /* MSSidebarController+Animations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MSSidebarController+Animations.h"; path = "Classes/Public/MSSidebarController+Animations.h"; sourceTree = "<group>"; };
 		579E369E18CFC6AC00A3CE47 /* MSSidebarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSidebarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		579E36A118CFC6AC00A3CE47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		579E36A318CFC6AC00A3CE47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,6 +185,7 @@
 				57B343DD18D0D68600E16F1E /* Events */,
 				57B343F618D1051300E16F1E /* MSSidebarController.h */,
 				57B343E518D0E08000E16F1E /* MSSidebarController+Internal.h */,
+				572A98DA190A06AB00AD1C8E /* MSSidebarController+Animations.h */,
 				579E36D218CFC83100A3CE47 /* MSSidebarController.m */,
 				57B343F718D1051A00E16F1E /* UIViewController+MSSidebarController.h */,
 				57B343F818D1051A00E16F1E /* UIViewController+MSSidebarController.m */,

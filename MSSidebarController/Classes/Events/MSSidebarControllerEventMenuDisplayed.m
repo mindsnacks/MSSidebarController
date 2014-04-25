@@ -28,8 +28,6 @@
 - (void)eventDidFireWithTransition:(TKTransition *)transition
                  sidebarController:(MSSidebarController *)sidebarController {
     [sidebarController.menuViewController didMoveToParentViewController:sidebarController];
-    
-    [sidebarController setNeedsStatusBarAppearanceUpdate];
 }
 
 @end
