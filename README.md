@@ -50,7 +50,7 @@ which you can use to change the state of the controller. Example:
 [self.sidebarController showViewController:SomeOtherController.new];
 ```
 
-## Instalation:
+## Installation:
 - Using [Cocoapods](http://cocoapods.org/):
 
 Just add this line to your `Podfile`:
