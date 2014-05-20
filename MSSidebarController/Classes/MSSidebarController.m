@@ -253,19 +253,43 @@ viewControllerIsNew:(BOOL)vcIsNew {
 
 - (BOOL)pointInside:(CGPoint)point
           withEvent:(UIEvent *)event {
-    MSSidebarController *sidebarController = self.sidebarController;
-    
-    const BOOL menuIsBeingDisplayed = ([sidebarController.stateMachine.currentState.name isEqualToString:kStateMenu]);
-    const BOOL touchIsInCurrentController = [self.sidebarController.currentViewController.view pointInside:point withEvent:event];
-    const BOOL touchIsInMenuController = [self.sidebarController.menuViewController.view pointInside:point withEvent:event];
+    const MSSidebarController *sidebarController = self.sidebarController;
 
-    const BOOL restoreLastVc = (menuIsBeingDisplayed && !touchIsInMenuController && touchIsInCurrentController);
+    // If we are not in the menu state, use the super implementation
+    if (![sidebarController.stateMachine.currentState.name isEqualToString:kStateMenu]) {
+        return [super pointInside:point withEvent:event];
+    }
 
-    if (restoreLastVc) {
+    const NSArray *sidebarSubviews = sidebarController.view.subviews;
+    const UIView *currentView = sidebarController.currentViewController.view;
+    const UIView *menuView = sidebarController.menuViewController.view;
+
+    // Restore the last view controller if:
+    // - the touch is in the current view and the menu is behind the current view
+    // - the touch is not in the menu view and the menu is in front of the current view
+    const BOOL currentViewTouch = [currentView pointInside:point withEvent:event];
+    const BOOL menuViewTouch = [menuView pointInside:point withEvent:event];
+
+    const NSUInteger menuViewIndex = [sidebarSubviews indexOfObject:menuView];
+    const NSUInteger currentViewIndex = [sidebarSubviews indexOfObject:currentView];
+    NSAssert(menuViewIndex != NSNotFound, @"The menu view is required to be a subview of the sidebar controller.");
+    NSAssert(currentViewIndex != NSNotFound, @"The current view is required to be a subview of the sidebar controller.");
+
+    const BOOL menuIsInFront = menuViewIndex > currentViewIndex;
+
+    BOOL restoreLastVC = NO;
+
+    if (menuIsInFront) {
+        restoreLastVC = !menuViewTouch;
+    } else {
+        restoreLastVC = currentViewTouch;
+    }
+
+    if (restoreLastVC) {
         [sidebarController restoreLastViewController];
     }
     
-    return !restoreLastVc;
+    return !restoreLastVC;
 }
 
 @end
