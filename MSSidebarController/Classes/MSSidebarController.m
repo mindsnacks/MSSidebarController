@@ -253,20 +253,37 @@ viewControllerIsNew:(BOOL)vcIsNew {
 
 - (BOOL)pointInside:(CGPoint)point
           withEvent:(UIEvent *)event {
-    MSSidebarController *sidebarController = self.sidebarController;
-    
-    const BOOL menuIsBeingDisplayed = ([sidebarController.stateMachine.currentState.name isEqualToString:kStateMenu]);
-    const BOOL touchIsInCurrentController = CGRectContainsPoint(self.sidebarController.currentViewController.view.frame,
-                                                                point);
-    
-    const BOOL shouldIgnoreTouch = (menuIsBeingDisplayed &&
-                                    touchIsInCurrentController);
-    
-    if (shouldIgnoreTouch) {
+    const MSSidebarController *sidebarController = self.sidebarController;
+
+    // If we are not in the menu state, use the super implementation
+    if (![sidebarController.stateMachine.currentState.name isEqualToString:kStateMenu]) {
+        return [super pointInside:point withEvent:event];
+    }
+
+    NSArray * const sidebarSubviews = sidebarController.view.subviews;
+    UIView * const currentView = sidebarController.currentViewController.view;
+    UIView * const menuView = sidebarController.menuViewController.view;
+
+    // Restore the last view controller if:
+    // - the touch is in the current view and the menu is behind the current view
+    // - the touch is not in the menu view and the menu is in front of the current view
+    const BOOL currentViewTouch = [currentView pointInside:[self convertPoint:point toView:currentView] withEvent:event];
+    const BOOL menuViewTouch = [menuView pointInside:[self convertPoint:point toView:menuView] withEvent:event];
+
+    const NSUInteger menuViewIndex = [sidebarSubviews indexOfObject:menuView];
+    const NSUInteger currentViewIndex = [sidebarSubviews indexOfObject:currentView];
+    NSAssert(menuViewIndex != NSNotFound, @"The menu view is required to be a subview of the sidebar controller.");
+    NSAssert(currentViewIndex != NSNotFound, @"The current view is required to be a subview of the sidebar controller.");
+
+    const BOOL menuIsInFront = menuViewIndex > currentViewIndex;
+
+    const BOOL restoreLastVC = (menuIsInFront) ? !menuViewTouch : currentViewTouch;
+
+    if (restoreLastVC) {
         [sidebarController restoreLastViewController];
     }
     
-    return !shouldIgnoreTouch;
+    return !restoreLastVC;
 }
 
 @end
