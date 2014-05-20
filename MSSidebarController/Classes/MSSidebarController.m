@@ -267,8 +267,8 @@ viewControllerIsNew:(BOOL)vcIsNew {
     // Restore the last view controller if:
     // - the touch is in the current view and the menu is behind the current view
     // - the touch is not in the menu view and the menu is in front of the current view
-    const BOOL currentViewTouch = [currentView pointInside:point withEvent:event];
-    const BOOL menuViewTouch = [menuView pointInside:point withEvent:event];
+    const BOOL currentViewTouch = [currentView pointInside:[self convertPoint:point toView:currentView] withEvent:event];
+    const BOOL menuViewTouch = [menuView pointInside:[self convertPoint:point toView:menuView] withEvent:event];
 
     const NSUInteger menuViewIndex = [sidebarSubviews indexOfObject:menuView];
     const NSUInteger currentViewIndex = [sidebarSubviews indexOfObject:currentView];
