@@ -277,13 +277,7 @@ viewControllerIsNew:(BOOL)vcIsNew {
 
     const BOOL menuIsInFront = menuViewIndex > currentViewIndex;
 
-    BOOL restoreLastVC = NO;
-
-    if (menuIsInFront) {
-        restoreLastVC = !menuViewTouch;
-    } else {
-        restoreLastVC = currentViewTouch;
-    }
+    const BOOL restoreLastVC = (menuIsInFront) ? !menuViewTouch : currentViewTouch;
 
     if (restoreLastVC) {
         [sidebarController restoreLastViewController];
