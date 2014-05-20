@@ -256,17 +256,16 @@ viewControllerIsNew:(BOOL)vcIsNew {
     MSSidebarController *sidebarController = self.sidebarController;
     
     const BOOL menuIsBeingDisplayed = ([sidebarController.stateMachine.currentState.name isEqualToString:kStateMenu]);
-    const BOOL touchIsInCurrentController = CGRectContainsPoint(self.sidebarController.currentViewController.view.frame,
-                                                                point);
-    
-    const BOOL shouldIgnoreTouch = (menuIsBeingDisplayed &&
-                                    touchIsInCurrentController);
-    
-    if (shouldIgnoreTouch) {
+    const BOOL touchIsInCurrentController = [self.sidebarController.currentViewController.view pointInside:point withEvent:event];
+    const BOOL touchIsInMenuController = [self.sidebarController.menuViewController.view pointInside:point withEvent:event];
+
+    const BOOL restoreLastVc = (menuIsBeingDisplayed && !touchIsInMenuController && touchIsInCurrentController);
+
+    if (restoreLastVc) {
         [sidebarController restoreLastViewController];
     }
     
-    return !shouldIgnoreTouch;
+    return !restoreLastVc;
 }
 
 @end
