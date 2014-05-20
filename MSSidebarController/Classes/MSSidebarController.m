@@ -260,9 +260,9 @@ viewControllerIsNew:(BOOL)vcIsNew {
         return [super pointInside:point withEvent:event];
     }
 
-    const NSArray *sidebarSubviews = sidebarController.view.subviews;
-    const UIView *currentView = sidebarController.currentViewController.view;
-    const UIView *menuView = sidebarController.menuViewController.view;
+    NSArray * const sidebarSubviews = sidebarController.view.subviews;
+    UIView * const currentView = sidebarController.currentViewController.view;
+    UIView * const menuView = sidebarController.menuViewController.view;
 
     // Restore the last view controller if:
     // - the touch is in the current view and the menu is behind the current view
