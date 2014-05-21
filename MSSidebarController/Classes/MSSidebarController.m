@@ -45,6 +45,9 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
     
     UIStatusBarStyle _currentStatusBarStyle;
     BOOL _currentStyleDependsOnCurrentVC;
+
+    BOOL _statusBarIsHidden;
+    BOOL _statusBarVisibilityDependsOnCurrentVC;
 }
 
 @end
@@ -76,6 +79,8 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
         activeVC.sidebarController = self;
         
         _currentStyleDependsOnCurrentVC = YES;
+
+        _statusBarVisibilityDependsOnCurrentVC = YES;
     }
     
     return self;
@@ -155,6 +160,11 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
     return (_currentStyleDependsOnCurrentVC) ? self.currentViewController.preferredStatusBarStyle : _currentStatusBarStyle;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return (_statusBarVisibilityDependsOnCurrentVC) ? self.currentViewController.prefersStatusBarHidden : _statusBarIsHidden;
+}
+
 #pragma mark - public
 
 - (UIViewController *)menuViewController {
@@ -232,6 +242,19 @@ viewControllerIsNew:(BOOL)vcIsNew {
 - (void)setCurrentStatusBarStyleWithCurrentViewController {
     _currentStyleDependsOnCurrentVC = YES;
     
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)setStatusBarIsHidden:(BOOL)hidden {
+    _statusBarIsHidden = hidden;
+    _statusBarVisibilityDependsOnCurrentVC = NO;
+
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)setStatusBarVisibilityWithCurrentViewController {
+    _statusBarVisibilityDependsOnCurrentVC = YES;
+
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
