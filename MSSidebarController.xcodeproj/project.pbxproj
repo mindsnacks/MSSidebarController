@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		21D9A6A7523146CC8891F5D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18785CD697834C85B10D7001 /* libPods.a */; };
+		572B10D119A66F080064F954 /* MSSidebarControllerEventAbstractDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B10D019A66F080064F954 /* MSSidebarControllerEventAbstractDisplayViewController.m */; };
+		572B10D419A66F280064F954 /* MSSidebarControllerEventDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B10D319A66F280064F954 /* MSSidebarControllerEventDisplayViewController.m */; };
+		572B10D719A6707D0064F954 /* MSSidebarControllerEventRestoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572B10D619A6707D0064F954 /* MSSidebarControllerEventRestoreViewController.m */; };
 		579E36A218CFC6AC00A3CE47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A118CFC6AC00A3CE47 /* Foundation.framework */; };
 		579E36A418CFC6AC00A3CE47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A318CFC6AC00A3CE47 /* CoreGraphics.framework */; };
 		579E36A618CFC6AC00A3CE47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579E36A518CFC6AC00A3CE47 /* UIKit.framework */; };
@@ -22,7 +25,6 @@
 		579E36C718CFC6AC00A3CE47 /* MSSidebarControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 579E36C618CFC6AC00A3CE47 /* MSSidebarControllerTests.m */; };
 		579E36D318CFC83100A3CE47 /* MSSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579E36D218CFC83100A3CE47 /* MSSidebarController.m */; };
 		57B343DB18D0D3B600E16F1E /* MSSidebarControllerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343DA18D0D3B600E16F1E /* MSSidebarControllerEvent.m */; };
-		57B343E018D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343DF18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m */; };
 		57B343E818D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343E718D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m */; };
 		57B343EB18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343EA18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m */; };
 		57B343EE18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B343ED18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m */; };
@@ -44,6 +46,12 @@
 		158231FB8E484217ACF954BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		18785CD697834C85B10D7001 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		572A98DA190A06AB00AD1C8E /* MSSidebarController+Animations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MSSidebarController+Animations.h"; path = "Classes/Public/MSSidebarController+Animations.h"; sourceTree = "<group>"; };
+		572B10CF19A66F080064F954 /* MSSidebarControllerEventAbstractDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventAbstractDisplayViewController.h; path = Classes/Events/MSSidebarControllerEventAbstractDisplayViewController.h; sourceTree = "<group>"; };
+		572B10D019A66F080064F954 /* MSSidebarControllerEventAbstractDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventAbstractDisplayViewController.m; path = Classes/Events/MSSidebarControllerEventAbstractDisplayViewController.m; sourceTree = "<group>"; };
+		572B10D219A66F280064F954 /* MSSidebarControllerEventDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventDisplayViewController.h; path = Classes/Events/MSSidebarControllerEventDisplayViewController.h; sourceTree = "<group>"; };
+		572B10D319A66F280064F954 /* MSSidebarControllerEventDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventDisplayViewController.m; path = Classes/Events/MSSidebarControllerEventDisplayViewController.m; sourceTree = "<group>"; };
+		572B10D519A6707D0064F954 /* MSSidebarControllerEventRestoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventRestoreViewController.h; path = Classes/Events/MSSidebarControllerEventRestoreViewController.h; sourceTree = "<group>"; };
+		572B10D619A6707D0064F954 /* MSSidebarControllerEventRestoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventRestoreViewController.m; path = Classes/Events/MSSidebarControllerEventRestoreViewController.m; sourceTree = "<group>"; };
 		579E369E18CFC6AC00A3CE47 /* MSSidebarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSidebarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		579E36A118CFC6AC00A3CE47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		579E36A318CFC6AC00A3CE47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,8 +72,6 @@
 		57B343D918D0D3B600E16F1E /* MSSidebarControllerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEvent.h; path = Classes/MSSidebarControllerEvent.h; sourceTree = "<group>"; };
 		57B343DA18D0D3B600E16F1E /* MSSidebarControllerEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEvent.m; path = Classes/MSSidebarControllerEvent.m; sourceTree = "<group>"; };
 		57B343DC18D0D61100E16F1E /* MSSidebarControllerEvent+Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MSSidebarControllerEvent+Protected.h"; path = "Classes/MSSidebarControllerEvent+Protected.h"; sourceTree = "<group>"; };
-		57B343DE18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventDisplayViewController.h; path = Classes/Events/MSSidebarControllerEventDisplayViewController.h; sourceTree = "<group>"; };
-		57B343DF18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventDisplayViewController.m; path = Classes/Events/MSSidebarControllerEventDisplayViewController.m; sourceTree = "<group>"; };
 		57B343E518D0E08000E16F1E /* MSSidebarController+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MSSidebarController+Internal.h"; path = "Classes/MSSidebarController+Internal.h"; sourceTree = "<group>"; };
 		57B343E618D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSSidebarControllerEventViewControllerDisplayed.h; path = Classes/Events/MSSidebarControllerEventViewControllerDisplayed.h; sourceTree = "<group>"; };
 		57B343E718D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSSidebarControllerEventViewControllerDisplayed.m; path = Classes/Events/MSSidebarControllerEventViewControllerDisplayed.m; sourceTree = "<group>"; };
@@ -200,14 +206,18 @@
 		57B343DD18D0D68600E16F1E /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				57B343DE18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.h */,
-				57B343DF18D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m */,
 				57B343E618D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.h */,
 				57B343E718D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m */,
 				57B343E918D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.h */,
 				57B343EA18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m */,
 				57B343EC18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.h */,
 				57B343ED18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m */,
+				572B10CF19A66F080064F954 /* MSSidebarControllerEventAbstractDisplayViewController.h */,
+				572B10D019A66F080064F954 /* MSSidebarControllerEventAbstractDisplayViewController.m */,
+				572B10D219A66F280064F954 /* MSSidebarControllerEventDisplayViewController.h */,
+				572B10D319A66F280064F954 /* MSSidebarControllerEventDisplayViewController.m */,
+				572B10D519A6707D0064F954 /* MSSidebarControllerEventRestoreViewController.h */,
+				572B10D619A6707D0064F954 /* MSSidebarControllerEventRestoreViewController.m */,
 				57B343EF18D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.h */,
 				57B343F018D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.m */,
 			);
@@ -346,8 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B343DB18D0D3B600E16F1E /* MSSidebarControllerEvent.m in Sources */,
-				57B343E018D0D6C700E16F1E /* MSSidebarControllerEventDisplayViewController.m in Sources */,
 				57B343EB18D0E82400E16F1E /* MSSidebarControllerEventDisplayMenu.m in Sources */,
+				572B10D419A66F280064F954 /* MSSidebarControllerEventDisplayViewController.m in Sources */,
+				572B10D719A6707D0064F954 /* MSSidebarControllerEventRestoreViewController.m in Sources */,
 				579E36B218CFC6AC00A3CE47 /* MSAppDelegate.m in Sources */,
 				57B343EE18D0ED4500E16F1E /* MSSidebarControllerEventMenuDisplayed.m in Sources */,
 				57B343E818D0E65100E16F1E /* MSSidebarControllerEventViewControllerDisplayed.m in Sources */,
@@ -355,6 +366,7 @@
 				579E36AE18CFC6AC00A3CE47 /* main.m in Sources */,
 				579E36D318CFC83100A3CE47 /* MSSidebarController.m in Sources */,
 				57B343F118D0EE0F00E16F1E /* MSSidebarControllerEventHideViewController.m in Sources */,
+				572B10D119A66F080064F954 /* MSSidebarControllerEventAbstractDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

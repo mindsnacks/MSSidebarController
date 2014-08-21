@@ -1,5 +1,5 @@
 //
-//  MSSidebarControllerEventDisplayViewController.h
+//  MSSidebarControllerEventRestoreViewController.h
 //  MSSidebarController
 //
 //  Created by Nacho Soto on 8/21/14.
@@ -8,6 +8,6 @@
 
 #import "MSSidebarControllerEventAbstractDisplayViewController.h"
 
-@interface MSSidebarControllerEventDisplayViewController : MSSidebarControllerEventAbstractDisplayViewController
+@interface MSSidebarControllerEventRestoreViewController : MSSidebarControllerEventAbstractDisplayViewController
 
 @end
