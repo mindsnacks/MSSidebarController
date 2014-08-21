@@ -16,6 +16,7 @@
 #import <libextobjc/EXTScope.h>
 
 #import "MSSidebarControllerEventDisplayViewController.h"
+#import "MSSidebarControllerEventRestoreViewController.h"
 #import "MSSidebarControllerEventViewControllerDisplayed.h"
 #import "MSSidebarControllerEventDisplayMenu.h"
 #import "MSSidebarControllerEventMenuDisplayed.h"
@@ -107,6 +108,11 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
                                                                               hidingViewControllerState:hidingVCState
                                                                           displayingViewControllerState:displayingVCState
                                                                                         animatorFactory:animatorFactory];
+    TKEvent *restoreVCEvent = [MSSidebarControllerEventRestoreViewController eventWithSidebarController:self
+                                                                                              menuState:menuState
+                                                                              hidingViewControllerState:hidingVCState
+                                                                          displayingViewControllerState:displayingVCState
+                                                                                        animatorFactory:animatorFactory];
     TKEvent *vcDisplayedEvent = [MSSidebarControllerEventViewControllerDisplayed eventWithSidebarController:self
                                                                               displayingViewControllerState:displayingVCState
                                                                                         viewControllerState:vcState];
@@ -123,6 +129,7 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
                                                                                   animatorFactory:animatorFactory];
     
     [_stateMachine addEvents:@[displayVCEvent,
+                               restoreVCEvent,
                                vcDisplayedEvent,
                                displayMenuEvent,
                                menuDisplayedEvent,
@@ -180,7 +187,7 @@ static NSString * const kStateDisplayingMenu    = @"displaying_menu";
 }
 
 - (void)restoreLastViewController {
-    [self fireEvent:MSSidebarControllerEventDisplayViewController.eventName
+    [self fireEvent:MSSidebarControllerEventRestoreViewController.eventName
  withViewController:_current
 viewControllerIsNew:NO];
 }
