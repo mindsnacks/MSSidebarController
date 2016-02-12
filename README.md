@@ -51,7 +51,7 @@ which you can use to change the state of the controller. Example:
 ```
 
 ## Installation:
-- Using [Cocoapods](http://cocoapods.org/):
+- Using [CocoaPods](http://cocoapods.org/):
 
 Just add this line to your `Podfile`:
 
